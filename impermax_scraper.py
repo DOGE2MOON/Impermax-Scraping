@@ -21,8 +21,10 @@ txt = input("Desired Chain: ")
 email = input("Gmail Account to Share Output: ")
 if txt == "Ethereum":
 	txt = "app"
-elif txt == "ethereum":
-	txt == "app"
+else:
+	txt = txt
+if txt == "ethereum":
+	txt = "app"
 else:
 	txt = txt
 url = 'https://' + txt + ".impermax.finance"
