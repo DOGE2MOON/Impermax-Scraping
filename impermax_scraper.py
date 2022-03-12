@@ -18,7 +18,9 @@ from gspread_pandas import Spread, Client
 # obtain user input and pass it into a variable, ensuring that the URL loads correctly
 print("Please type the FULL name of the chain you wish to scrape (ex: Polygon)")
 txt = input("Desired Chain: ")
-email = input("Gmail Account to Share Output: ")
+# to save time, you can hardcode this value in line #89 where email is reference and remove the input from line #22
+email = input("Gmail Account to Share Output: ") 
+
 if txt == "Ethereum":
 	txt = "app"
 else:
@@ -73,7 +75,7 @@ df['Coin 2 Supply Rate'] = rates2
 df['Coin 1 Borrow Rate'] = br1
 df['Coin 2 Borrow Rate'] = br2
 
-# name each export separately to avoid overwriting and export locally
+# appropriately name files and export locally before trying Google Sheets
 if txt == "app":
 	txt = "Ethereum"
 else:
@@ -81,7 +83,7 @@ else:
 name = txt + " scraping results.csv"
 df.to_csv(name, encoding='utf-8')
 
-# export values to Google Sheets
+# export values and share to Google Sheets
 gc = gspread.service_account(filename='PATH_TO_GOOGLE_SHEETS_API.json')
 sh = gc.create("Impermax Scraping Data")
 sh = gc.open('Impermax Scraping Data')
