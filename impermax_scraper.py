@@ -12,6 +12,8 @@ from gspread_pandas import Spread, Client
 # pip3 install pandas
 # pip3 install gspread
 # pip3 install gspread_pandas
+# if you encounter errors with the chrome webdriver version, download a driver compatible with your chrome version from: https://chromedriver.chromium.org/home
+# then, edit /selenium/webdriver/chrome/webdriver.py to point to the chrome driver file you just downloaded
 
 # obtain user input and pass it into a variable, ensuring that the URL loads correctly
 print("Please type the FULL name of the chain you wish to scrape (ex: Polygon)")
